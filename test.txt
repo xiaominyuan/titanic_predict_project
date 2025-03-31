@@ -1,0 +1,28 @@
+curl -X POST http://127.0.0.1:8000/titanic_sync/ \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Pclass": 3,
+    "Sex": "female",
+    "Age": 22,
+    "SibSp": 1,
+    "Parch": 0,
+    "Fare": 7.25,
+    "Embarked": "C"
+  }'
+
+
+
+curl -X POST http://127.0.0.1:8000/titanic_async/ \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Pclass": 3,
+    "Sex": "female",
+    "Age": 22,
+    "SibSp": 1,
+    "Parch": 0,
+    "Fare": 7.25,
+    "Embarked": "C"
+  }'
+
+
+curl -X GET http://127.0.0.1:8000/titanic_result/292edc04-2172-4271-ad21-4806bc48a097/

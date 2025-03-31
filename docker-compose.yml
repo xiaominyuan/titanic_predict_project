@@ -1,0 +1,38 @@
+version: '3.7'
+
+services:
+  # Django 服务
+  web:
+    build: .
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+
+  # Celery 工作者服务
+  celery:
+    build: .
+    command: ["celery", "-A", "titanic_project", "worker", "--loglevel=info"]
+    volumes:
+      - .:/app
+    depends_on:
+      - web
+      - redis
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+
+  # Redis 服务
+  redis:
+    image: "redis:latest"
+    volumes:
+      - redis-data:/data
+
+volumes:
+  redis-data:

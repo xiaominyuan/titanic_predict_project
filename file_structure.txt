@@ -1,0 +1,22 @@
+.
+├── Dockerfile
+├── docker-compose.yml
+├── file_structure.txt
+├── manage.py
+├── readme.md
+├── requirements.txt
+├── test.txt
+├── titanic_project
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── celery.py
+│   ├── model
+│   ├── settings.py
+│   ├── task
+│   ├── urls.py
+│   ├── utils
+│   ├── views.py
+│   └── wsgi.py
+└── titanic_project.log
+
+6 directories, 14 files
