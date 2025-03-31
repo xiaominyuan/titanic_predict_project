@@ -25,4 +25,4 @@ curl -X POST http://127.0.0.1:8000/titanic_async/ \
   }'
 
 
-curl -X GET http://127.0.0.1:8000/titanic_result/292edc04-2172-4271-ad21-4806bc48a097/
+curl -X GET http://127.0.0.1:8000/titanic_result/4285cca2-3560-4c62-b9c9-6b9d6fb9e1c8/
