@@ -76,6 +76,31 @@ deploy result is below:
 
 ## 2- project structure:
 
+
+```
+.
+├── Dockerfile
+├── docker-compose.yml
+├── file_structure.txt
+├── manage.py
+├── readme.md
+├── requirements.txt
+├── test.txt
+├── titanic_project
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── celery.py
+│   ├── model
+│   ├── settings.py
+│   ├── task
+│   ├── urls.py
+│   ├── utils
+│   ├── views.py
+│   └── wsgi.py
+└── titanic_project.log
+
+```
+
 titanic_project/model: train model and save model;
 
 titanic_project/task:  used for async calculation;
